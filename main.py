@@ -37,7 +37,7 @@ def buscar_pais(paises, nombre):
 
 def validar_texto(mensaje):
     while True:
-        nombre = input(mensaje).strip().lower()
+        nombre = input(mensaje).strip().title()
         try:    
             if nombre == "":
                 print()
@@ -145,11 +145,11 @@ def filtrar_paises(paises):
         print("Opción no válida. Por favor, seleccione una opción entre 1 y 3.")
         opcion = input("Seleccione una opción de filtro (1-3): ").strip()
         if opcion == "1":
-            pass
+            filtrar_por_continente(paises)
         if opcion == "2":
-            pass
+            filtrar_por_poblacion(paises)
         if opcion == "3":
-            pass
+            filtrar_por_superficie(paises)
         
 def filtrar_por_continente(paises):
     continente = validar_continente()
@@ -169,6 +169,11 @@ def filtrar_por_poblacion(paises):
     for pais in paises:
         if poblacion_minima <= pais["poblacion"] <= poblacion_maxima:
             encontrados.append(pais)
+    
+    while poblacion_minima > poblacion_maxima:
+        print("Error: La población mínima no puede ser mayor que la población máxima.")
+        poblacion_minima = validar_entero("Ingrese la población mínima: ",1)
+        poblacion_maxima = validar_entero("Ingrese la población máxima: ",1)
     
     if len(encontrados) == 0:
         print("No se encontraron países dentro del rango de población especificado.")
@@ -310,7 +315,8 @@ def main():
             mostrar_estadisticas(paises)
         elif opcion == "8":
             guardar_paises("paises.csv", paises)
-            print("Saliendo del programa. ¡Hasta luego!")
+            print("Datos guardados exitosamente. Saliendo del programa.")
             break
             
-main()
+if __name__ == "__main__":
+    main()
