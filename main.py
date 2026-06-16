@@ -124,7 +124,7 @@ def buscar_pais_por_nombre(paises):
     encontrados = []
     
     for pais in paises:
-        if nombre in pais["nombre"].strip().lower():
+        if nombre in pais["nombre"].strip().title():
             encontrados.append(pais)
     
     if len(encontrados) == 0:
@@ -144,12 +144,13 @@ def filtrar_paises(paises):
     while opcion not in ["1", "2", "3"]:
         print("Opción no válida. Por favor, seleccione una opción entre 1 y 3.")
         opcion = input("Seleccione una opción de filtro (1-3): ").strip()
-        if opcion == "1":
-            filtrar_por_continente(paises)
-        if opcion == "2":
-            filtrar_por_poblacion(paises)
-        if opcion == "3":
-            filtrar_por_superficie(paises)
+        
+    if opcion == "1":
+        filtrar_por_continente(paises)
+    elif opcion == "2":
+        filtrar_por_poblacion(paises)
+    elif opcion == "3":
+        filtrar_por_superficie(paises)
         
 def filtrar_por_continente(paises):
     continente = validar_continente()
@@ -165,15 +166,16 @@ def filtrar_por_poblacion(paises):
     poblacion_minima = validar_entero("Ingrese la población mínima: ",1)
     poblacion_maxima = validar_entero("Ingrese la población máxima: ",1)
     
+    while poblacion_minima > poblacion_maxima:
+        print("Error: La población mínima no puede ser mayor que la población máxima.")
+        poblacion_minima = validar_entero("Ingrese la población mínima: ",1)
+        poblacion_maxima = validar_entero("Ingrese la población máxima: ",1)
+    
     encontrados = []
     for pais in paises:
         if poblacion_minima <= pais["poblacion"] <= poblacion_maxima:
             encontrados.append(pais)
     
-    while poblacion_minima > poblacion_maxima:
-        print("Error: La población mínima no puede ser mayor que la población máxima.")
-        poblacion_minima = validar_entero("Ingrese la población mínima: ",1)
-        poblacion_maxima = validar_entero("Ingrese la población máxima: ",1)
     
     if len(encontrados) == 0:
         print("No se encontraron países dentro del rango de población especificado.")
@@ -185,6 +187,12 @@ def filtrar_por_poblacion(paises):
 def filtrar_por_superficie(paises): 
     superficie_minima = validar_entero("Ingrese la superficie mínima (en km²): ",1)
     superficie_maxima = validar_entero("Ingrese la superficie máxima (en km²): ",1)
+    
+    while superficie_minima > superficie_maxima:
+        print("Error: La superficie mínima no puede ser mayor que la superficie máxima.")
+        superficie_minima = validar_entero("Ingrese la superficie mínima (en km²): ", 1)
+        superficie_maxima = validar_entero("Ingrese la superficie máxima (en km²): ", 1)
+    
     
     encontrados = []
     for pais in paises:
