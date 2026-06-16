@@ -157,6 +157,13 @@ python main.py
 
 ---
 
+## 📢 Recurso Audiovisual 
+
+- Video en Youtube: https://youtu.be/KFaBrPIKCUg?si=V1q1M5q97HWAbEV7
+- Documentacion: https://drive.google.com/file/d/1n5_eWjimuRRmUGcn_8MgBsx4TfyP5jND/view?usp=drivesdk
+
+---
+
 ## 👨‍💻 Integrantes
 
 - Facundo Gomez
