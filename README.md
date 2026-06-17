@@ -165,8 +165,6 @@ python main.py
 ---
 ## 🎥 Video demostración
 
-Agregar aquí el enlace al video:
-
 ```
 https://youtu.be/KFaBrPIKCUg?si=V1q1M5q97HWAbEV7
 ```
@@ -174,8 +172,6 @@ https://youtu.be/KFaBrPIKCUg?si=V1q1M5q97HWAbEV7
 ---
 
 ## 📄 Documentación
-
-Agregar aquí el enlace al PDF:
 
 ```
 https://drive.google.com/file/d/1n5_eWjimuRRmUGcn_8MgBsx4TfyP5jND/view?usp=drivesdk
