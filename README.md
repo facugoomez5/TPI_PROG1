@@ -163,3 +163,16 @@ python main.py
 - Ricardo Oliva
 
 ---
+## 🎥 Video demostración
+
+```
+https://youtu.be/KFaBrPIKCUg?si=V1q1M5q97HWAbEV7
+```
+
+---
+
+## 📄 Documentación
+
+```
+https://drive.google.com/file/d/1n5_eWjimuRRmUGcn_8MgBsx4TfyP5jND/view?usp=drivesdk
+```
